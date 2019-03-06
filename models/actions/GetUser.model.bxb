@@ -1,0 +1,41 @@
+action (GetUser) {
+  description (__DESCRIPTION__)
+  type (Search)
+  collect {
+    input (firstName) {
+      type (contact.FirstName)
+      min (Required) max (One)
+    }
+
+    input (lastName) {
+      type (contact.LastName)
+      min (Required) max (One)
+    }
+
+    input (emailAddress) {
+      type (EmailAddress)
+      min (Required) max (One)
+    }
+
+    input (survey) {
+      type (Survey)
+      min (Required) max(One)
+    }
+
+    computed-input (demographics) {
+      type (Demographics)
+      min (Optional) max (One) 
+      compute {
+        if (survey) {
+          intent {
+            goal {GetDemographics}
+          }
+        } 
+      }
+    }
+  }
+  output (User) 
+}
+
+
+

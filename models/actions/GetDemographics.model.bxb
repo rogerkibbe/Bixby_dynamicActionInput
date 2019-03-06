@@ -1,0 +1,15 @@
+action (GetDemographics) {
+  description (__DESCRIPTION__)
+  type(Search)
+  collect {
+    input (age) {
+      type (Age)
+      min (Required) max(One)
+    }
+    input(married) {
+      type (Married)
+      min (Required) max(One)
+    }
+  }
+  output (Demographics)
+}

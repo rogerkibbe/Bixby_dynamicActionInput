@@ -1,0 +1,11 @@
+structure (Demographics) {
+  description (__DESCRIPTION__)
+  property (age) {
+    type (Age)
+    min (Optional) max (One)
+  }
+   property (married) {
+    type (Married)
+    min (Optional) max (One)
+  }
+}

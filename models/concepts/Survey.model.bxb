@@ -1,0 +1,3 @@
+boolean (Survey) {
+  description (User will answer survey)
+}

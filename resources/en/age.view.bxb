@@ -1,0 +1,26 @@
+input-view {
+  match {
+    Age (age) { 
+      to-input: GetDemographics
+    }
+  }
+  message {
+    template ("What is your age?")
+  }
+  render {
+    form {
+      elements {
+        number-input {
+          id (age)
+          label (Age)
+          type (Age)
+          value ("#{raw(age)}")
+        }
+      }
+      on-submit {
+        goal: Age
+        value: viv.core.FormElement(age)
+      }
+    }
+  }
+}

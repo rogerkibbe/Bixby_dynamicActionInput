@@ -1,0 +1,13 @@
+endpoints {
+  action-endpoints {
+    action-endpoint (GetUser) {
+      accepted-inputs (firstName, lastName, emailAddress, survey, demographics)
+      local-endpoint (getUser.js)
+    }
+    
+     action-endpoint (GetDemographics) {
+      accepted-inputs (age, married)
+      local-endpoint (getDemographics.js)
+    }
+  }
+}

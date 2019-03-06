@@ -1,0 +1,29 @@
+input-view {
+  match {
+    EmailAddress (emailAddress) { 
+      to-input: GetUser (getUser)
+    }
+  }
+  message {
+    template ("#{value(getUser.firstName)}, what is your email?")
+  }
+  render {
+    form {
+      elements {
+        text-input {
+          id (emailAddress)
+          label (Email)
+          type (EmailAddress)
+          max-length (50)
+          // Add client side validation on email field
+          pattern-type (email)
+          value ("#{raw(emailAddress)}")
+        }
+      }
+      on-submit {
+        goal: EmailAddress
+        value: viv.core.FormElement(emailAddress)
+      }
+    }
+  }
+}

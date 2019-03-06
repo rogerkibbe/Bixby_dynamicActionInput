@@ -1,0 +1,26 @@
+structure (User) {
+  property (firstName) {
+    type (contact.FirstName)
+    min (Required) max (One)
+  }
+
+  property (lastName) {
+    type (contact.LastName)
+    min (Required) max (One)
+  }
+
+  property (emailAddress) {
+    type (EmailAddress)
+    min (Required) max (One)
+  }
+  
+  property (survey) {
+    type (Survey)
+    min (Required) max (One)
+  }
+  
+  property (demographics) {
+    type (Demographics)
+    min (Optional) max (One)
+  }
+}

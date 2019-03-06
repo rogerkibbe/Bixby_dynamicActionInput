@@ -1,0 +1,29 @@
+input-view {
+  match {
+    Survey (survey) { 
+      to-input: GetUser
+    }
+  }
+
+  message {
+    template ("Will you answer a short survey?")
+  }
+
+  render {
+    form {
+      elements {
+        checkbox {
+          id (survey)
+          type (Survey)
+          primary-text("")
+          secondary-text("Help us personalize your experience")
+          value("{raw(survey)}")
+        }
+      }
+      on-submit {
+        goal: Survey
+        value: viv.core.FormElement(survey)
+      }
+    }
+  }
+}

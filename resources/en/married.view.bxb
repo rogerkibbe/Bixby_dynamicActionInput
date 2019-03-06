@@ -1,0 +1,26 @@
+input-view {
+  match {
+    Married (married) { 
+      to-input: GetDemographics
+    }
+  }
+  message {
+    template ("Are you married?")
+  }
+  render {
+    form {
+      elements {
+        checkbox {
+          id ("married")
+          primary-text ("Yes")
+          type (Married)
+          value ("#{raw(married)}")
+        }
+      }
+      on-submit {
+        goal: Married
+        value: viv.core.FormElement(married)
+      }
+    }
+  }
+}

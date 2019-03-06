@@ -1,0 +1,16 @@
+capsule {
+  id (playground.dynamicActionInput)
+  version (0.1.0)
+  format (3)
+  capsule-imports {
+    import (viv.self) {
+      as (self) version (3.2.51)
+    }
+    import (viv.contact) {
+      as (contact) version-from (self)
+    }
+  }
+  targets {
+    target (bixby-mobile-en-US)
+  }
+}
